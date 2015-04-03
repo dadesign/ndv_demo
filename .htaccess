@@ -1,0 +1,65 @@
+AddDefaultCharset windows-1251
+
+AddHandler server-parsed .shtml .ssi .txt
+
+#Запрет (-) или разрешение(+) отображения списка файлов при отсутствующем DirectoryIndex
+Options -Indexes 
+
+#################################################
+# PHP_FLAG - указывается тогда, когда параметр PHP может принимать в качестве значения 
+# только истина или ложь (1 или 0, true или false, on или off)
+#################################################
+
+#Отображение на странице ошибок выполнения скриптов
+php_flag display_errors On
+
+#Разрешать или не разрешать закачивание файлов по HTTP
+php_flag file_uploads On
+
+#Gets the current configuration setting of magic quotes gpc 
+php_flag magic_quotes_gpc Off
+
+#Gets the current active configuration setting of magic_quotes_runtime 
+php_flag magic_quotes_runtime Off
+
+#Регистрировать или нет переменные (GET, POST, COOKIE, SERVER) в качестве глобальных переменных
+php_flag register_globals Off
+
+#Сообщает PHP, следует ли регистрировать устаревшие длинные переменные типа $HTTP_*_VARS
+php_flag register_long_arrays Off
+
+#Устанавливает процент вероятности запуска подпрограммы "удалить устаревшие сессии" в начале обработки запроса
+#php_flag session.gc_probability 1
+
+#Должен ли PHP использовать Cookies
+php_flag session.use_cookies On
+
+#Запрет PHP принимать идентификатор сессии, если он был передан через URL
+php_flag session.use_only_cookies On
+
+#Отключение возможности подстановки идентификатора сессии в ссылке на сайте
+php_flag session.use_trans_sid 0
+
+#Разрешать или не разрешать поддержку zlib компрессии
+php_flag zlib.output_compression On
+
+#APC (Alternative PHP Cache)
+#php_flag apc.cache_by_default Off
+
+#OPCACHE (PHP >= 5.5)
+php_flag opcache.enable Off
+
+#################################################
+# PHP_VALUE - указывается во всех остальных случаях, например, 
+# когда параметр PHP принимает цифровое или строковое значение
+#################################################
+
+#Максимально возможное время выполнения скрипта (в секундах)
+php_value max_execution_time 600
+
+#Максимально возможное время, которое скрипт может потратить на обработку загружаемых данных (в секундах)
+php_value max_input_time 600
+
+#Эта директива задаёт максимальный объём памяти в байтах, который разрешается использовать скрипту
+#php_value memory_limit 32M
+
